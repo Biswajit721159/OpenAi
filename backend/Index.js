@@ -14,7 +14,7 @@ app.use(cors({
 }));
 let { ApiResponse } = require("./utils/ApiResponse.js");
 
-app.get('/',async(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("Hello World")
 })
 

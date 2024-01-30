@@ -14,6 +14,10 @@ app.use(cors({
 }));
 let { ApiResponse } = require("./utils/ApiResponse.js");
 
+app.get('/',async(req,res)=>{
+    res.send("Hello World")
+})
+
 app.post('/', async (req, res) => {
     let apikey=process.env.apiKey
     let api=process.env.api

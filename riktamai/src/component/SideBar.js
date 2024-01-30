@@ -47,7 +47,7 @@ const SideBar = () => {
                     <button className="query"><FaMessage className='imageitem' /> What is React Js</button>
                 </div> */}
             </div>
-            <div className="lowerSide">
+            {/* <div className="lowerSide">
                 <div className='listItems'>
                     <IoHome className='listitemsImg' size={'30px'} /> Home
                 </div>
@@ -57,7 +57,7 @@ const SideBar = () => {
                 <div className='listItems'>
                     <IoIosRocket className='listitemsImg' size={'30px'} /> Upgrade To Pro
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

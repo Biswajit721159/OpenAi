@@ -14,8 +14,7 @@ html {
 }
 
 body {
-  color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App {
@@ -38,6 +37,7 @@ body {
 
 .brand {
   font-size: 2rem;
+  color: white;
 }
 
 .upperSide {
@@ -51,6 +51,7 @@ body {
   align-items: center;
   justify-content: space-around;
   margin-bottom: 2.5rem;
+  color: white;
 }
 
 .midBtn {
@@ -185,13 +186,13 @@ body {
   border-radius: 0.5rem;
 }
 
-.txt{
+.txt {
   margin-top: 20px;
   overflow: auto;
-  white-space: pre-wrap; 
+  white-space: pre-wrap;
 }
 
-.codecopy{
+.codecopy {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -201,6 +202,7 @@ body {
   margin: 1rem;
   padding: 2rem 3rem;
   font-size: 1.2rem;
+  color: white;
   /* margin-top: 5px; */
   /* display: flex; */
   /* align-items: flex-start; */

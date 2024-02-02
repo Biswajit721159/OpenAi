@@ -27,14 +27,14 @@ const ShowData = (props) => {
                                 {ele.code !== undefined ?
                                     <div className='txt'>
                                         <pre ref={codeRef} className='codecopy txt' style={{ backgroundColor: '#FBFCFC' }}>
-                                            <code className="language-cpp">
+                                            <code className="txt language-cpp">
                                                 {ele.code}
                                             </code>
                                             <div onClick={() => copy(ele.code)}><button>copy</button></div>
                                         </pre>
                                     </div>
                                     : (
-                                        <pre className='txt'>{ele.text}</pre>
+                                        <p className='txt'>{ele.text}</p>
                                     )}
                             </div>
                         ))

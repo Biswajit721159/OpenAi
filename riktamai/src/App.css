@@ -15,6 +15,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-wrap: break-word;
 }
 
 .App {
@@ -135,7 +136,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 0.5rem;
-  width: 78rem;
+  width: 75rem;
 }
 
 .inp>textarea {
@@ -161,8 +162,9 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-behavior: smooth;
+  word-wrap: break-word; 
   width: 100%;
-  max-width: 80rem;
+  max-width: 75rem;
   height: calc(100vh - 17rem);
 }
 
@@ -187,9 +189,9 @@ body {
 }
 
 .txt {
-  margin-top: 20px;
+  margin-top: 10px;
   overflow: auto;
-  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .codecopy {
@@ -199,10 +201,13 @@ body {
 }
 
 .chat {
-  margin: 1rem;
-  padding: 2rem 3rem;
+  margin: 10px;
+  padding: 20px ;
   font-size: 1.2rem;
+  width: 100%;
+  word-wrap: break-word; 
   color: white;
+  /* white-space: pre-wrap; */
   /* margin-top: 5px; */
   /* display: flex; */
   /* align-items: flex-start; */
@@ -239,3 +244,97 @@ body {
   pointer-events: none;
   background: white;
 }
+
+@media only screen and (max-width: 1285px) {
+  .inp{
+    width: 65rem;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .inp{
+    width: 60rem;
+  }
+  .chats{
+    max-width: 60rem;
+  }
+}
+
+@media only screen and (max-width: 1235px) {
+  .inp{
+    width: 50rem;
+  }
+  .chats{
+    max-width: 50rem;
+  }
+  .sideBar{
+    display: none;
+  }
+  .main{
+    flex:12;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .inp{
+    width: 45rem;
+  }
+  .chats{
+    max-width: 45rem;
+  }
+}
+
+@media only screen and (max-width: 622px) {
+  .inp{
+    width: 40rem;
+  }
+  .chats{
+    max-width: 40rem;
+  }
+}
+
+
+@media only screen and (max-width: 580px) {
+  .inp{
+    width: 35rem;
+  }
+  .chats{
+    max-width: 35rem;
+  }
+}
+
+
+@media only screen and (max-width: 517px) {
+  .inp{
+    width: 30rem;
+  }
+  .chats{
+    max-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .inp{
+    width: 25rem;
+  }
+  .chats{
+    max-width: 25rem;
+  }
+  .chat{
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .body{
+    margin-left: 10px;
+  }
+  .inp{
+    width: 20rem;
+  }
+  .chats{
+    max-width: 20rem;
+  }
+}
+

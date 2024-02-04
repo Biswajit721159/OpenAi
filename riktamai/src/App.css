@@ -142,13 +142,13 @@ body {
 }
 .inp{
   position: fixed;
-  bottom: 4px;
+  bottom: 15px;
 }
 
 .inp>textarea {
   width: calc(100%-3rem);
   outline: none;
-  padding: 1.25rem;
+  padding: 0.5rem;
   color: white;
   max-height: 150px;
 }

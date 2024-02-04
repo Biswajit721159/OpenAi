@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -138,18 +140,28 @@ body {
   border-radius: 0.5rem;
   width: 70rem;
 }
+.inp{
+  position: fixed;
+  bottom: 4px;
+}
 
 .inp>textarea {
   width: calc(100%-3rem);
   outline: none;
   padding: 1.25rem;
   color: white;
+  max-height: 150px;
 }
 
 .inp>textarea,
 .send {
   background: transparent;
   border: none;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+textarea::-webkit-scrollbar {
+  display: none;
 }
 
 .send {
@@ -165,7 +177,7 @@ body {
   word-wrap: break-word; 
   width: 100%;
   width: 70rem;
-  height: calc(100vh - 17rem);
+  height: calc(100vh - 15rem);
 }
 
 .chats::-webkit-scrollbar {
@@ -201,8 +213,8 @@ body {
 }
 
 .chat {
-  margin: 10px;
-  padding: 10px ;
+  margin-top: 10px;
+  /* padding: 10px ; */
   font-size: 1.2rem;
   width: 100%;
   word-wrap: break-word; 
@@ -243,6 +255,9 @@ body {
 @media only screen and (max-width: 1285px) {
   .inp{
     width: 65rem;
+  }
+  .chats{
+    max-width: 65rem;
   }
 }
 

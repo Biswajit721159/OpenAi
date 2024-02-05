@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoSend } from "react-icons/io5";
-import { BeatLoader } from 'react-spinners'
+import { PulseLoader } from 'react-spinners'
 import ShowData from "./ShowData";
 import { sendtoAi } from './APICall'
 const Main = () => {
@@ -63,7 +63,7 @@ const Main = () => {
       <div className='chats'>
         <ShowData message={message} />
         <div className="chat">
-          {loader === true && <BeatLoader color="#36d7b7" />}
+          {loader === true && <PulseLoader color="#36d7b7" />}
         </div>
         <div ref={msgEnd} />
       </div>

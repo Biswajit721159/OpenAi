@@ -21,7 +21,7 @@ const Main = () => {
 
   let [searching_description, setsearching_description] = useState('')
 
-  async function sendToChatGpt() {
+  async function sendToChatGpt(e) {
 
     if (searching_description.length === 0) return
     let text = searching_description;
@@ -37,11 +37,13 @@ const Main = () => {
     let data = await sendtoAi(message, text)
     setMessage([...data.data])
     setloader(data.isload)
+    e.target.style.height = 'auto';
+    e.target.style.height = e.target.scrollHeight + 'px';
   }
 
   const handelEnter = async (e) => {
     if (e.key === 'Enter') {
-      sendToChatGpt()
+      sendToChatGpt(e)
     }
   }
 
@@ -63,8 +65,8 @@ const Main = () => {
       </div>
       <div className='chatFooter'>
         <div className='inp'>
-          <textarea type='text' rows={1} disabled={loader} value={searching_description} onKeyDown={handelEnter} onChange={(e) => setsearchvalue(e)} placeholder="Send a message" className="inputfrom" />
-          <button disabled={loader} className='send' onClick={sendToChatGpt}><IoSend size={'25px'} /></button>
+          <textarea type='text' rows={1} disabled={loader}  value={searching_description} onKeyDown={handelEnter} onChange={(e) => setsearchvalue(e)} placeholder="Send a message" className="inputfrom" />
+          <button disabled={loader} className='send' onClick={(e)=>sendToChatGpt(e)}><IoSend size={'25px'} /></button>
         </div>
       </div>
     </>

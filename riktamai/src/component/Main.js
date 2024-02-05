@@ -27,6 +27,8 @@ const Main = () => {
     let text = searching_description;
     setloader(true)
     setsearching_description('')
+    e.target.value=''
+    setsearchvalue(e)
     let newMessage = {
       "role": 'user',
       "content": text
@@ -66,7 +68,7 @@ const Main = () => {
       <div className='chatFooter'>
         <div className='inp'>
           <textarea type='text' rows={1} disabled={loader}  value={searching_description} onKeyDown={handelEnter} onChange={(e) => setsearchvalue(e)} placeholder="Send a message" className="inputfrom" />
-          <button disabled={loader} className='send' onClick={(e)=>sendToChatGpt(e)}><IoSend size={'25px'} /></button>
+          {/* <button disabled={loader} className='send' onClick={(e)=>sendToChatGpt(e)}><IoSend size={'25px'} /></button> */}
         </div>
       </div>
     </>

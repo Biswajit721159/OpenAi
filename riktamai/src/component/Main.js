@@ -21,14 +21,14 @@ const Main = () => {
 
   let [searching_description, setsearching_description] = useState('')
 
-  async function sendToChatGpt(e) {
+  async function sendToChatGpt() {
 
     if (searching_description.length === 0) return
     let text = searching_description;
     setloader(true)
     setsearching_description('')
-    e.target.value=''
-    setsearchvalue(e)
+    textareaRef.current.value=''
+    handleTextareaChange()
     let newMessage = {
       "role": 'user',
       "content": text
@@ -39,8 +39,6 @@ const Main = () => {
     let data = await sendtoAi(message, text)
     setMessage([...data.data])
     setloader(data.isload)
-    e.target.style.height = 'auto';
-    e.target.style.height = e.target.scrollHeight + 'px';
   }
 
   const handelEnter = async (e) => {
@@ -49,11 +47,15 @@ const Main = () => {
     }
   }
 
-  const setsearchvalue = (event) => {
-    setsearching_description(event.target.value)
-    event.target.style.height = 'auto';
-    event.target.style.height = event.target.scrollHeight + 'px';
-  }
+    const textareaRef = useRef(null);
+    const handleTextareaChange = () => {
+        const textarea = textareaRef.current;
+        setsearching_description(textarea.value)
+        if (textarea) {
+            textarea.style.height = 'auto'; 
+            textarea.style.height = `${textarea.scrollHeight}px`; 
+        }
+    };
 
 
   return (
@@ -67,8 +69,8 @@ const Main = () => {
       </div>
       <div className='chatFooter'>
         <div className='inp'>
-          <textarea type='text' rows={1} disabled={loader}  value={searching_description} onKeyDown={handelEnter} onChange={(e) => setsearchvalue(e)} placeholder="Send a message" className="inputfrom" />
-          {/* <button disabled={loader} className='send' onClick={(e)=>sendToChatGpt(e)}><IoSend size={'25px'} /></button> */}
+          <textarea type='text'  ref={textareaRef} onChange={handleTextareaChange} rows={1} disabled={loader}  value={searching_description} onKeyDown={handelEnter}  placeholder="Send a message" className="inputfrom" />
+          <button disabled={loader} className='send' onClick={()=>sendToChatGpt()}><IoSend size={'25px'} /></button>
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Snackbar } from '@mui/material'
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import usericon from '../assets/usericon.png';
@@ -7,12 +8,13 @@ import '../App.css'
 const ShowData = (props) => {
     let message = props.message;
     const codeRef = useRef(null);
-
+    const [open, setOpen] = useState(false)
     useEffect(() => {
         Prism.highlightAll();
     }, []);
 
     function copy(data) {
+        setOpen(true)
         navigator.clipboard.writeText(data);
     }
 
@@ -43,6 +45,12 @@ const ShowData = (props) => {
                     )}
                 </div>
             ))}
+            <Snackbar
+                open={open}
+                onClose={() => setOpen(false)}
+                autoHideDuration={2000}
+                message="Copied to clipboard"
+            />
         </>
     );
 };

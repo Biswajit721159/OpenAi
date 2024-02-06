@@ -132,7 +132,7 @@ body {
 }
 
 .inp {
-  padding: 1rem;
+  padding: 0.7rem;
   background: rgba(28, 30, 58, 1);
   display: flex;
   justify-content: space-between;

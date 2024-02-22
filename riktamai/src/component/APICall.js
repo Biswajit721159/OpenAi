@@ -4,6 +4,7 @@ let conversationHistory = [];
 
 export async function sendtoAi(message, text) {
     try {
+        let api=process.env.REACT_APP_Backend_api
         conversationHistory.push({
             'role': 'user',
             'content': text
@@ -11,7 +12,7 @@ export async function sendtoAi(message, text) {
         const requestBody = {
             'question': conversationHistory,
         };
-        let responce = await axios.post(`/api`, requestBody)
+        let responce = await axios.post(`${api}/api`, requestBody)
         conversationHistory.push({
             'role': 'assistant',
             'content': responce.data.data[responce.data.data.length - 1]

@@ -27,7 +27,7 @@ const Main = () => {
     let text = searching_description;
     setloader(true)
     setsearching_description('')
-    textareaRef.current.value=''
+    textareaRef.current.value = ''
     handleTextareaChange()
     let newMessage = {
       "role": 'user',
@@ -39,6 +39,7 @@ const Main = () => {
     let data = await sendtoAi(message, text)
     setMessage([...data.data])
     setloader(data.isload)
+
   }
 
   const handelEnter = async (e) => {
@@ -47,15 +48,15 @@ const Main = () => {
     }
   }
 
-    const textareaRef = useRef(null);
-    const handleTextareaChange = () => {
-        const textarea = textareaRef.current;
-        setsearching_description(textarea.value)
-        if (textarea) {
-            textarea.style.height = 'auto'; 
-            textarea.style.height = `${textarea.scrollHeight}px`; 
-        }
-    };
+  const textareaRef = useRef(null);
+  const handleTextareaChange = () => {
+    const textarea = textareaRef.current;
+    setsearching_description(textarea.value)
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  };
 
 
   return (
@@ -69,8 +70,8 @@ const Main = () => {
       </div>
       <div className='chatFooter'>
         <div className='inp'>
-          <textarea type='text'  ref={textareaRef} onChange={handleTextareaChange} rows={1} disabled={loader}  value={searching_description} onKeyDown={handelEnter}  placeholder="Send a message" className="inputfrom" />
-          <button disabled={loader} className='send' onClick={()=>sendToChatGpt()}><IoSend size={'25px'} /></button>
+          <textarea type='text' ref={textareaRef} onChange={handleTextareaChange} rows={1} disabled={loader} value={searching_description} onKeyDown={handelEnter} placeholder="Send a message" className="inputfrom" />
+          <button disabled={loader} className='send' onClick={() => sendToChatGpt()}><IoSend size={'25px'} /></button>
         </div>
       </div>
     </>

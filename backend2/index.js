@@ -19,33 +19,26 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
-app.post('/', async (req, res) => {
-    let apikey=process.env.apiKey
-    let api=process.env.api
-    let searching_description = req.body.searching_description
-    const headergpt = {
-        'Authorization': `Bearer ${apikey}`,
-        'Content-Type': 'application/json',
-    }
-    const payload = {
-        "model": "gpt-3.5-turbo",
-        "messages": [
-            {
-                "role": "assistant",
-                "content": "Related to everything"
-            },
-            {
-                "role": "user",
-                "content": searching_description
-            },
-        ],
-        "temperature": 0
-    }
-    const chat_url = api
-    const response = await axios.post(chat_url, payload, { headers: headergpt })
+app.post('/api', async (req, res) => {
     try {
+        let apikey = process.env.apiKey
+        let api = process.env.api
+        let question = req.body.question
+        console.log(question)
+        const headergpt = {
+            'Authorization': `Bearer ${apikey}`,
+            'Content-Type': 'application/json',
+        }
+        const payload = {
+            "model": "gpt-4-1106-preview",
+            "messages": question,
+            "temperature": 0
+        }
+        const chat_url = api
+        const response = await axios.post(chat_url, payload, { headers: headergpt })
         let response_data = response.data.choices[0].message
         let data = solve(response_data.content)
+        data.push(response_data.content)
         return res.status(200).json(new ApiResponse(200, data, "success"));
     }
     catch {

@@ -30,7 +30,7 @@ app.post('/api', async (req, res) => {
             'Content-Type': 'application/json',
         }
         const payload = {
-            "model": "gpt-4-1106-preview",
+            "model": "gpt-3.5-turbo",
             "messages": question,
             "temperature": 0
         }

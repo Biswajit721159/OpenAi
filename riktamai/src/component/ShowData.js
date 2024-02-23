@@ -36,7 +36,7 @@ const ShowData = (props) => {
                                         </pre>
                                     </div>
                                     : (
-                                        <p className='txt'>{ele.text}</p>
+                                        <pre className='txt'>{ele.text}</pre>
                                     )}
                             </div>
                         ))

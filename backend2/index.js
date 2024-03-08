@@ -41,7 +41,8 @@ app.post('/api', async (req, res) => {
         data.push(response_data.content)
         return res.status(200).json(new ApiResponse(200, data, "success"));
     }
-    catch {
+    catch(error){
+        console.log(error)
         return res.status(500).json(new ApiResponse(500, "Sorry, we are not able to answer your question.", "error"));
     }
 })

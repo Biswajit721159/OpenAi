@@ -64,7 +64,7 @@ const Main = () => {
       <div className='chats'>
         <ShowData message={message} />
         <div className="chat">
-          {loader === true && <PulseLoader color="#36d7b7" />}
+          {loader === true && <PulseLoader size={'8px'} color="#36d7b7" />}
         </div>
         <div ref={msgEnd} />
       </div>

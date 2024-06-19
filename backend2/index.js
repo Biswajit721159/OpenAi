@@ -85,6 +85,6 @@ function solve(str) {
     return ans;
 }
 
-app.listen(5000, () => {
-    console.log('Server is running on http://localhost:5000');
+app.listen(6600, () => {
+    console.log('Server is running on http://localhost:6600');
 });

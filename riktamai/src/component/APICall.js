@@ -4,7 +4,7 @@ let conversationHistory = [];
 
 export async function sendtoAi(message, text) {
     try {
-        let api=process.env.REACT_APP_Backend_api
+        let api=process.env.REACT_APP_API
         conversationHistory.push({
             'role': 'user',
             'content': text
